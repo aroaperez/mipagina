@@ -1,0 +1,173 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0f172a;
+  color: #e5e7eb;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  background: rgba(15, 23, 42, 0.95);
+  padding: 20px;
+  border-bottom: 1px solid #334155;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+nav a {
+  color: #e5e7eb;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #38bdf8;
+}
+
+section {
+  max-width: 1000px;
+  margin: auto;
+  padding: 80px 25px;
+}
+
+.hero {
+  text-align: center;
+  padding-top: 120px;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  color: #38bdf8;
+}
+
+.hero h2 {
+  font-size: 1.8rem;
+  margin: 15px 0;
+}
+
+.hero p {
+  max-width: 700px;
+  margin: auto;
+  color: #cbd5e1;
+}
+
+.buttons {
+  margin-top: 35px;
+}
+
+.buttons a {
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 24px;
+  background: #38bdf8;
+  color: #0f172a;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+}
+
+.buttons a:hover {
+  background: #7dd3fc;
+}
+
+.interview,
+.about,
+.projects {
+  background: #111827;
+  margin-top: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(56, 189, 248, 0.08);
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #38bdf8;
+}
+
+.date {
+  color: #94a3b8;
+  margin-bottom: 15px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 30px;
+}
+
+.card,
+.project-card {
+  background: #1e293b;
+  padding: 25px;
+  border-radius: 16px;
+  border: 1px solid #334155;
+}
+
+.card h3,
+.project-card h3 {
+  color: #7dd3fc;
+  margin-bottom: 10px;
+}
+
+.terminal {
+  background: #020617;
+  border: 1px solid #334155;
+  border-radius: 18px;
+  padding: 30px;
+  box-shadow: 0 0 30px rgba(56, 189, 248, 0.12);
+}
+
+.terminal h3 {
+  color: #38bdf8;
+}
+
+.role {
+  color: #94a3b8;
+  margin-bottom: 20px;
+}
+
+pre {
+  white-space: pre-wrap;
+  color: #86efac;
+  font-family: "Courier New", monospace;
+  font-size: 0.95rem;
+}
+
+.project-card {
+  margin-bottom: 20px;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  color: #94a3b8;
+  border-top: 1px solid #334155;
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.7rem;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
