@@ -1,65 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: #0f172a;
-  color: #e5e7eb;
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
+  font-family: 'Fira Code', monospace;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(0, 255, 255, 0.18), transparent 30%),
+    radial-gradient(circle at 80% 30%, rgba(255, 0, 180, 0.16), transparent 30%),
+    radial-gradient(circle at 50% 90%, rgba(255, 140, 0, 0.12), transparent 35%),
+    #0b1020;
+  color: #f8fafc;
 }
 
 header {
-  position: sticky;
+  position: fixed;
   top: 0;
-  background: rgba(15, 23, 42, 0.95);
-  padding: 20px;
-  border-bottom: 1px solid #334155;
+  width: 100%;
+  padding: 25px 60px;
+  z-index: 10;
 }
 
 nav {
   display: flex;
+  gap: 28px;
   justify-content: center;
-  gap: 25px;
 }
 
 nav a {
-  color: #e5e7eb;
+  color: white;
   text-decoration: none;
-  font-weight: bold;
+  font-size: 1.1rem;
 }
 
 nav a:hover {
-  color: #38bdf8;
+  color: #22d3ee;
 }
 
 section {
-  max-width: 1000px;
+  min-height: 100vh;
+  max-width: 1200px;
   margin: auto;
-  padding: 80px 25px;
+  padding: 120px 30px;
 }
 
 .hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
-  padding-top: 120px;
 }
 
-.hero h1 {
-  font-size: 4rem;
-  color: #38bdf8;
+.hero h1,
+h2 {
+  font-size: 4.5rem;
+  background: linear-gradient(90deg, #22d3ee, #a78bfa, #ff4ecd, #f97316);
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-bottom: 25px;
 }
 
 .hero h2 {
-  font-size: 1.8rem;
-  margin: 15px 0;
+  font-size: 1.7rem;
+  color: #e5e7eb;
+  background: none;
 }
 
 .hero p {
-  max-width: 700px;
-  margin: auto;
-  color: #cbd5e1;
+  max-width: 760px;
+  margin: 0 auto;
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.9;
+  color: #e2e8f0;
 }
 
 .buttons {
@@ -69,105 +89,163 @@ section {
 .buttons a {
   display: inline-block;
   margin: 10px;
-  padding: 12px 24px;
-  background: #38bdf8;
-  color: #0f172a;
+  padding: 16px 28px;
+  border-radius: 40px;
   text-decoration: none;
-  border-radius: 30px;
-  font-weight: bold;
+  font-weight: 700;
+  color: #08111f;
+  background: #22d3ee;
+  border: 2px solid #22d3ee;
+  box-shadow: 0 0 22px rgba(34, 211, 238, 0.45);
+}
+
+.buttons a:nth-child(2) {
+  background: transparent;
+  color: #22d3ee;
 }
 
 .buttons a:hover {
-  background: #7dd3fc;
+  transform: translateY(-3px);
 }
 
 .interview,
 .about,
-.projects {
-  background: #111827;
-  margin-top: 40px;
-  border-radius: 20px;
-  box-shadow: 0 0 30px rgba(56, 189, 248, 0.08);
+.projects,
+.experience {
+  text-align: center;
 }
 
-h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #38bdf8;
+.interview {
+  min-height: auto;
+}
+
+.interview p,
+.about > p,
+.projects > p {
+  max-width: 850px;
+  margin: 0 auto;
+  font-size: 1.15rem;
+  line-height: 1.9;
+  color: #dbeafe;
 }
 
 .date {
-  color: #94a3b8;
-  margin-bottom: 15px;
+  color: #93c5fd;
+  margin-bottom: 20px;
 }
 
 .cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-  margin-top: 30px;
+  gap: 35px;
+  margin-top: 70px;
 }
 
 .card,
-.project-card {
-  background: #1e293b;
-  padding: 25px;
-  border-radius: 16px;
-  border: 1px solid #334155;
+.project-card,
+.terminal {
+  background: rgba(30, 41, 59, 0.45);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  backdrop-filter: blur(12px);
+  border-radius: 24px;
+  padding: 40px 28px;
+  box-shadow: 0 0 40px rgba(15, 23, 42, 0.45);
+}
+
+.card {
+  min-height: 260px;
 }
 
 .card h3,
-.project-card h3 {
-  color: #7dd3fc;
-  margin-bottom: 10px;
+.project-card h3,
+.terminal h3 {
+  font-size: 1.7rem;
+  margin: 18px 0;
+  color: white;
+}
+
+.card p,
+.project-card p {
+  color: #dbeafe;
+  line-height: 1.8;
+}
+
+.card::before {
+  display: block;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.card:nth-child(1)::before {
+  content: "🧠";
+}
+
+.card:nth-child(2)::before {
+  content: "🌟";
+}
+
+.card:nth-child(3)::before {
+  content: "🚀";
 }
 
 .terminal {
-  background: #020617;
-  border: 1px solid #334155;
-  border-radius: 18px;
-  padding: 30px;
-  box-shadow: 0 0 30px rgba(56, 189, 248, 0.12);
+  text-align: left;
+  max-width: 900px;
+  margin: 60px auto 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.terminal h3,
+.terminal .role {
+  padding-left: 30px;
 }
 
 .terminal h3 {
-  color: #38bdf8;
+  padding-top: 30px;
 }
 
 .role {
-  color: #94a3b8;
+  color: #93c5fd;
   margin-bottom: 20px;
 }
 
 pre {
+  background: rgba(2, 6, 23, 0.75);
+  color: #dbeafe;
+  padding: 35px;
   white-space: pre-wrap;
-  color: #86efac;
-  font-family: "Courier New", monospace;
   font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.projects {
+  min-height: auto;
 }
 
 .project-card {
-  margin-bottom: 20px;
+  margin: 30px auto;
+  max-width: 850px;
+  text-align: left;
 }
 
 footer {
   text-align: center;
-  padding: 30px;
+  padding: 35px;
   color: #94a3b8;
-  border-top: 1px solid #334155;
 }
 
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 2.7rem;
-  }
-
-  nav {
-    flex-wrap: wrap;
-    gap: 12px;
+@media (max-width: 850px) {
+  .hero h1,
+  h2 {
+    font-size: 3rem;
   }
 
   .cards {
     grid-template-columns: 1fr;
+  }
+
+  nav {
+    flex-wrap: wrap;
   }
 }
